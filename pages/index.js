@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/future/image";
 import styles from "../styles/Home.module.css";
-import Header from "../components/header";
+import Header from "../components/Header";
 import { useSession, getSession } from "next-auth/react";
 import Hero from "../components/Hero";
 import Slider from "../components/Slider";
