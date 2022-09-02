@@ -1,26 +1,43 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+    body {
+        @apply bg-[#040714] text-[#f9f9f9] font-body;
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer components {
+    .header-link {
+        @apply flex items-center space-x-2 cursor-pointer;
+    }
+
+    .span {
+        @apply relative uppercase text-sm font-medium before:bg-[#f9f9f9] before:rounded-bl before:-bottom-1.5 before:h-0.5 before:inset-x-0 before:absolute before:transform before:origin-left before:scale-x-0 before:transition-all before:duration-200 group-hover:before:scale-x-100;
+    }
+
+    .companys {
+        @apply flex relative w-36 h-20 sm:w-32 sm:h-20 ssm:w-16 ssm:h-10 md:h-32 md:w-52 xl:h-36 xl:w-60 2xl:w-[280px] 2xl:h-40 border-[3px] border-[#f9f9f9] border-opacity-10 rounded-lg cursor-pointer shadow-xl overflow-hidden hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300;
+    }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+.dropdown-menu li {
+    position: relative;
+    width: 100px;
+    }
+    .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -1px;
+    }
+    .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    }
+    .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+    }
