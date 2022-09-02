@@ -26,6 +26,7 @@ function Slider({ trending_show_week, trending_movie_week }) {
         {show_with_movie.map((element) => (
           <div
             className="cursor-pointer w-[100vh] h-[25vh] ssm:h-[25vh] sm:h-[25vh] mdb:h-[30vh] md:h-[30vh] lg:h-[50vh] "
+            key={element.id}
             onClick={
               element.media_type != "movie"
                 ? () => router.push(`/Show/${element.id}`)
@@ -40,11 +41,11 @@ function Slider({ trending_show_week, trending_movie_week }) {
               alt=""
             />
 
-            <h2 class="absolute text-2xl sm1:text-3xl lg:text-4xl 1xl:text-5xl  text-amber-400 bottom-4 left-1/2 -translate-x-1/2 ">
+            <h2 className="absolute text-2xl sm1:text-3xl lg:text-4xl 1xl:text-5xl  text-amber-400 bottom-4 left-1/2 -translate-x-1/2 ">
               {element.name || element.title}
             </h2>
 
-            <h3 class="absolute text-2xl text-green-300 bottom-5 left-5 flex ">
+            <h3 className="absolute text-2xl text-green-300 bottom-5 left-5 flex ">
             <div className="h-[15px] w-[20px] sm1:h-[20px] sm1:w-[25px] lg:h-[25px] lg:w-[30px] 1xl:h-[30px] 1xl:w-[35px] relative -ml-3">
               <Image
                 src="/images/imdb.png"
