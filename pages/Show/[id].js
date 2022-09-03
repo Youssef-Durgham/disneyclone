@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Header from "./../../components/Header";
 import { useSession, getSession } from "next-auth/react";
 import Hero from "../../components/Hero";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player";
 import Seasons from "../../components/Show_seasons";
@@ -17,7 +17,12 @@ export default function Tv_id({ result, sugestion, seasonsno }) {
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
-
+  const [hasWindow, setHasWindow] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
   return (
     <div className="relative">
       <Head>
@@ -109,7 +114,7 @@ export default function Tv_id({ result, sugestion, seasonsno }) {
                 </div>
               </div>
               <div className="relative pt-[56.25%]">
-                <ReactPlayer
+              {hasWindow && <ReactPlayer
                   url={`?https://www.youtube.com/watch?v=${result.videos.results[index].key}`}
                   width="100%"
                   height="100%"
@@ -123,7 +128,7 @@ export default function Tv_id({ result, sugestion, seasonsno }) {
                       },
                     },
                   }}
-                />
+                />}
               </div>
             </div>
           </section>
