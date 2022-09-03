@@ -4,19 +4,23 @@ import { useRouter } from "next/router";
 import Header from "./../../components/Header";
 import { useSession, getSession } from "next-auth/react";
 import Hero from "../../components/Hero";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player";
 import Moviescollection from "../../components/Moviescollection"
 import Inplay from "./../../components/Inplay";
-import mongoose from "mongoose";
 
 export default function Tv_id({ result, sugestion }) {
   const { data: session, status } = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const [showPlayer, setShowPlayer] = useState(false);
   const [showPlayercontent, setShowPlayercontent] = useState(false);
-
+  const [hasWindow, setHasWindow] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
@@ -119,7 +123,7 @@ export default function Tv_id({ result, sugestion }) {
                 </div>
               </div>
               <div className="relative pt-[56.25%]">
-                <ReactPlayer
+                {hasWindow && <ReactPlayer
                   url={`?https://www.youtube.com/watch?v=${result.videos.results[index].key}`}
                   width="100%"
                   height="100%"
@@ -133,7 +137,7 @@ export default function Tv_id({ result, sugestion }) {
                       },
                     },
                   }}
-                />
+                />}
               </div>
             </div>
           </section>
