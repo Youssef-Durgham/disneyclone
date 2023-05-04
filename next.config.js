@@ -17,5 +17,6 @@ module.exports = {
     GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL,
     AUTH0_CALLBACK_URL: process.env.AUTH0_CALLBACK_URL,
     FACEBOOK_CALLBACK_URL: process.env.FACEBOOK_CALLBACK_URL,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
   }
