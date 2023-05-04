@@ -60,17 +60,17 @@ export default NextAuth({
   adapter: MongoDBAdapter(clientPromise),
     providers: [
     GoogleProvider({
-      clientId: "236962782905-169rsqkhkh0ti6mprpuju4auum7cui1b.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
       Auth0Provider({
-        clientId: 'aTEYpg9Z7Wa6CFasr9yuhBIxK8p15yde',
-        clientSecret: 'N0f6zRJZ1ER_Pkg4CBPc1NPxsmRafkGxkrHHukiCpf4hbPkwAdJTS_bUiPrERbHH',
-        issuer: 'https://dev-9hx9puyp.us.auth0.com'
+        clientId: process.env.AUTH0_CLIENT_ID,
+        clientSecret: process.env.AUTH0_CLIENT_SECRET,
+        issuer: process.env.AUTH0_ISSUER_BASE_URL
       }),
       FacebookProvider({
-        clientId: '2191402641034976',
-        clientSecret: '58175b3b1cba8a1e8ccd4a82338f2c09'
+        clientId: process.env.FACEBOOK_CLIENT_ID,
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET
       }),
     ],
     secret: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
