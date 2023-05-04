@@ -63,15 +63,18 @@ NEXTAUTH_URL:"https://main.d2gayeidqn12dv.amplifyapp.com",
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      callbackUrl: `https://main.d2gayeidqn12dv.amplifyapp.com/api/auth/callback/google`,
     }),
       Auth0Provider({
         clientId: process.env.AUTH0_CLIENT_ID,
         clientSecret: process.env.AUTH0_CLIENT_SECRET,
-        issuer: process.env.AUTH0_ISSUER_BASE_URL
+        issuer: process.env.AUTH0_ISSUER_BASE_URL,
+        callbackUrl: `https://main.d2gayeidqn12dv.amplifyapp.com/api/auth/callback/google`,
       }),
       FacebookProvider({
         clientId: process.env.FACEBOOK_CLIENT_ID,
-        clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+        callbackUrl: `https://main.d2gayeidqn12dv.amplifyapp.com/api/auth/callback/google`,
       }),
     ],
     secret: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
