@@ -143,10 +143,10 @@ export const getServerSideProps = async (context) => {
   const { id } = context.query;
 
   const reqmovie = await fetch(
-    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.TMDB_API}&language=en-US&append_to_response=videos`
+    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&append_to_response=videos`
   ).then((res) => res.json());
   const reqsugestion = await fetch(
-    `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.TMDB_API}&language=en-US&page=1`
+    `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1`
   ).then((res) => res.json());
 
   return {
