@@ -57,7 +57,7 @@ import { MongoClient } from "mongodb"
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
-NEXTAUTH_URL:"https://main.d2gayeidqn12dv.amplifyapp.com",
+NEXTAUTH_URL:"https://disney.codeklab.com",
   adapter: MongoDBAdapter(clientPromise),
     providers: [
     GoogleProvider({
