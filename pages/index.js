@@ -82,28 +82,28 @@ export async function getServerSideProps(context) {
     trending_show_dayRes,
   ] = await Promise.all([
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMDB_API}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.TMDB_API}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.NEXT_PUBLIC_TMDB_API}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API}`
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.NEXT_PUBLIC_TMDB_API}`
     ),
     fetch(
-      `https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.TMDB_API}`
+      `https://api.themoviedb.org/3/trending/tv/week?api_key=${process.env.NEXT_PUBLIC_TMDB_API}`
     ),
     fetch(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.TMDB_API}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.NEXT_PUBLIC_TMDB_API}`
     ),
     fetch(
-      `https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.TMDB_API}`
+      `https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.NEXT_PUBLIC_TMDB_API}`
     ),
   ]);
   const [
