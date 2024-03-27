@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
     <SessionProvider
       session={pageProps.session}
       options={{
-        site: "https://main.d2gayeidqn12dv.amplifyapp.com",
+        site: "https://disney.codeklab.com",
       }}
     >
       <Component {...pageProps} />
